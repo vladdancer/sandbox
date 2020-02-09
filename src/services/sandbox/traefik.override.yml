@@ -1,0 +1,15 @@
+version: '3.3'
+
+services:
+  traefik:
+    networks:
+      - test
+    ports:
+      - '80:80'
+      #- "443:443"
+      #- '8080:8080'
+
+networks:
+  test:
+    external:
+      name: snd_asd_el8pw6ew_default

@@ -1,0 +1,3 @@
+run_cmd: 'make up'
+stop_cmd: 'make stop'
+reload_cmd: ''

@@ -1,0 +1,45 @@
+version: '3.3'
+services:
+  traefik:
+    image: 'traefik:v2.0.0'
+    restart: unless-stopped
+    command:
+      - '--api.dashboard=true'
+      - '--log.level=DEBUG'
+      - '--api.insecure=true'
+      - '--providers.docker=true'
+      - '--providers.docker.exposedbydefault=false'
+      - '--entrypoints.http.address=:80'
+    ports:
+      - '80:80'
+      - '8080:8080'
+    volumes:
+      - '/var/run/docker.sock:/var/run/docker.sock'
+    networks:
+      - snd_beta18_sddw0t3y_default
+      - snd_beta19_u5kvn8ut_default
+      - snd_beta20_0ujoejtn_default
+      - snd_beta21_s5zpqsvl_default
+      - snd_beta22_fdlbas-r_default
+networks:
+  snd_beta16_kaotpeft_default:
+    external:
+      name: snd_beta16_kaotpeft_default
+  snd_beta17_v72fi_yw_default:
+    external:
+      name: snd_beta17_v72fi_yw_default
+  snd_beta18_sddw0t3y_default:
+    external:
+      name: snd_beta18_sddw0t3y_default
+  snd_beta19_u5kvn8ut_default:
+    external:
+      name: snd_beta19_u5kvn8ut_default
+  snd_beta20_0ujoejtn_default:
+    external:
+      name: snd_beta20_0ujoejtn_default
+  snd_beta21_s5zpqsvl_default:
+    external:
+      name: snd_beta21_s5zpqsvl_default
+  snd_beta22_fdlbas-r_default:
+    external:
+      name: snd_beta22_fdlbas-r_default

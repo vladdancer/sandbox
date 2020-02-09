@@ -1,0 +1,11 @@
+version: '3'
+services:
+  php:
+    labels:
+      - sandbox.managed=true
+    volumes:
+      - './code:/var/www/html:cached'
+    entrypoint:
+      - echo
+      - disabled service
+    restart: 'no'

@@ -1,0 +1,12 @@
+version: 3
+
+services:
+  php:
+    container_name: test
+    entrypoint: ['echo', 'disabled service'] # or just remove entry point
+    restart: no
+    volumes: # [0] sourceDir always!
+      - /test:/test
+      - ddfdsfsd
+    environment:
+      test: 22

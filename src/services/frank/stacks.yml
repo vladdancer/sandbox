@@ -1,0 +1,23 @@
+services:
+  nginx:
+    features:
+      web_accessible:
+        url_prefix: app
+
+    stacks:
+      wordpress:
+        default: true
+      drupal:
+        default: true
+      php:
+        default: false
+      cake4: []
+    props:
+      docRoot:
+        tplFn: setVolume
+
+
+  ide:
+    features:
+      web_accessible:
+        url_prefix: app

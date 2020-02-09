@@ -1,0 +1,36 @@
+meta:
+  advanced_adminer:
+    features: ['web_accessible']
+    web:
+      url_prefix: adminer
+    stacks:
+      - drupal
+  advanced_php:
+    stacks:
+      - cake4
+
+stacks:
+  - wordpress
+  - cake4
+  - myCustomStack
+
+features:
+  basic:
+    enabled:
+      ui:
+        type: confirm
+        default: true
+      destination: docker_compose_override.toggle_entrypoint
+    volume:
+  web_accessible:
+    https:
+      ui:
+        type: confirm
+        default: false
+      destination: docker_compose_override.label
+    basic_auth:
+      ui:
+        type: password
+        default: false
+      destination: traefik.label.middleware
+
